@@ -145,12 +145,16 @@
             initGame();
         }
 
-        window.addEventListener("keydown", () => {
-            if (!gameOver) {
-                bird.gravity = bird.lift;
-                jumpSound.play();
-            }
-        });
+        function jump() {
+    if (!gameOver) {
+        bird.gravity = bird.lift;
+        jumpSound.play();
+    }
+}
+
+window.addEventListener("keydown", jump);
+window.addEventListener("touchstart", jump); // For mobile
+
         
         initGame();
     </script>
